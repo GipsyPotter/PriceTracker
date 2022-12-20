@@ -19,7 +19,7 @@ pip install bs4
 - Thegioididong
 - GearVN
 ### Adding
-- Fptshop
+- ~~Fptshop~~ (Currently not possible)
 - Lazada
 - Tiki
 - ~~Shopee~~ (Currently not possible)

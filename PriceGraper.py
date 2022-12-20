@@ -68,7 +68,18 @@ def GearVN(URL):
     return Pformat(rprice)
 
 
+def main():
+    URL = input("URL: ")
+    if "cellphones.com.vn" in URL:
+        print(Cellphones(URL))
+    elif "thegioididong.com" in URL:
+        print(TGDD(URL))
+    elif "gearvn.com" in URL:
+        print(GearVN(URL))
+    else:
+        print("URL not supported")
+
+
 
 if __name__ == "__main__":
-    URL = "https://shopee.vn/-R%E1%BA%BB-nh%E1%BA%A5t-shoppee-Combo-Ch%E1%BA%ADu-r%E1%BB%ADa-b%C3%A1t-%C4%91%C3%BAc-Inox-304-cao-c%E1%BA%A5p-hai-h%E1%BB%91-7843-8245-V%C3%B2i-vu%C3%B4ng-INOX-SUS304-n%C3%B3ng-l%E1%BA%A1nh-i.394026336.10500511538?sp_atk=d1e8721a-1208-4068-88ae-f5c3ce428826&xptdk=d1e8721a-1208-4068-88ae-f5c3ce428826"
-    print(Shopee(URL))
+    main()
