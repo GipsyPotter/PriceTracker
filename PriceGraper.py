@@ -2,6 +2,15 @@ import requests
 from bs4 import BeautifulSoup
 
 
+def Pformat(price):
+    if price:
+        price = int(price)
+        price = "{:,}".format(price)
+        return price
+    else:
+        return "Price not found"
+
+
 def Cellphones(URL):
     rprice = ""
     page = requests.get(URL)
@@ -15,26 +24,32 @@ def Cellphones(URL):
         for digit in price:
             if digit.isnumeric():
                 rprice += str(digit)
-    return rprice
+    return Pformat(rprice)
 
 
 def TGDD(URL):
+    tag = input("Tag: ")
+    Class = input("Class: ")
+
+    if not tag or not Class:
+        tag = "p"
+        Class = "box-price-present"
+
     HEADERS = {
         'User-Agent': 'Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'}
     rprice = ""
     page = requests.get(URL, headers=HEADERS)
     soup = BeautifulSoup(page.content, "html.parser")
 
-    results = soup.find_all("div", class_="oo-left")
+    results = soup.find_all(tag, class_=Class)
     for result in results:
-        price = result.find("strong")
-        price = price.text.strip()
-        for digit in price:
+        result = result.text.strip()
+        for digit in result:
             if digit.isnumeric():
                 rprice += str(digit)
-    return rprice
+    return Pformat(rprice)
 
 
 if __name__ == "__main__":
-    URL = "https://www.thegioididong.com/laptop/hp-240-g8-i3-617k6pa"
+    URL = "https://www.thegioididong.com/may-tinh-bang/huawei-matepad-11"
     print(TGDD(URL))
