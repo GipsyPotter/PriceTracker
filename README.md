@@ -15,6 +15,7 @@ pip install bs4
 ### Supported websites
 - Cellphones
 - Thegioididong
+- GearVN
 ### Adding
 - Fptshop
 - Lazada

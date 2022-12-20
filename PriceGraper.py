@@ -50,6 +50,25 @@ def TGDD(URL):
     return Pformat(rprice)
 
 
+def GearVN(URL):
+    HEADERS = {
+        'User-Agent': 'Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'}
+    rprice = ""
+    page = requests.get(URL, headers=HEADERS)
+    soup = BeautifulSoup(page.content, "html.parser")
+
+    results = soup.find_all("span", class_="product_sale_price")
+    if not results:
+        results = soup.find_all("span", class_="product_price")
+    for result in results:
+        result = result.text.strip()
+        for digit in result:
+            if digit.isnumeric():
+                rprice += str(digit)
+    return Pformat(rprice)
+
+
+
 if __name__ == "__main__":
-    URL = "https://www.thegioididong.com/may-tinh-bang/huawei-matepad-11"
-    print(TGDD(URL))
+    URL = "https://gearvn.com/products/ban-phim-co-fl-esports-cmk87sam-tropical-forest"
+    print(GearVN(URL))
