@@ -14,9 +14,9 @@ pip install bs4
 ## Functions
 ### Supported websites
 - Cellphones
+- Thegioididong
 ### Adding
 - Fptshop
-- Thegioididong
 - Lazada
 - Tiki
 - Shopee
