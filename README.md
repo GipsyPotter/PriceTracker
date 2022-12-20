@@ -22,7 +22,7 @@ pip install bs4
 - Fptshop
 - Lazada
 - Tiki
-- Shopee
+- ~~Shopee~~ (Currently not possible)
 - Hanoicomputer
 - Dienmayxanh
 - etc.
