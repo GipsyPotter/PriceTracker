@@ -1,6 +1,7 @@
 # Price Tracker
 Price Tracker is a simple web application that allows you to track the price of a product on pages like Cellphones, Thegioididong, Lazada, Tiki, Shopee, etc.
 
+This project is fully self-hosted, so you don't need to worry about your data.
 ## Installation
 1. Clone the repository
 2. Install the dependencies
@@ -22,3 +23,10 @@ pip install bs4
 - Hanoicomputer
 - Dienmayxanh
 - etc.
+### Features
+- Track the price of a product given URL
+- [WORK IN PROGRESS] Save into CSV file at selected intervals
+- [WORK IN PROGRESS] Send email notification when the price drops below a certain threshold
+- [WORK IN PROGRESS] Send email notification when the price changes
+- [WORK IN PROGRESS] Send email notification when the product is out of stock
+- 
