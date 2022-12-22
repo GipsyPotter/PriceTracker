@@ -20,8 +20,8 @@ pip install bs4
 - GearVN
 ### Adding
 - ~~Fptshop~~ (Currently not possible)
-- Lazada
-- Tiki
+- ~~Lazada~~
+- ~~Tiki~~
 - ~~Shopee~~ (Currently not possible)
 - Hanoicomputer
 - Dienmayxanh
