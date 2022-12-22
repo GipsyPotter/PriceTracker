@@ -68,6 +68,19 @@ def GearVN(URL):
     return Pformat(rprice)
 
 
+def Phongvu(URL):
+    rprice = ""
+    page = requests.get(URL)
+    soup = BeautifulSoup(page.content, "html.parser")
+    results = soup.find_all("div", class_="att-product-detail-latest-price")
+    for result in results:
+        result = result.text.strip()
+        for digit in result:
+            if digit.isnumeric():
+                rprice += str(digit)
+    return Pformat(rprice)
+
+
 def main():
     URL = input("URL: ")
     if "cellphones.com.vn" in URL:
@@ -76,6 +89,8 @@ def main():
         print(TGDD(URL))
     elif "gearvn.com" in URL:
         print(GearVN(URL))
+    elif "phongvu.vn" in URL:
+        print(Phongvu(URL))
     else:
         print("URL not supported")
 

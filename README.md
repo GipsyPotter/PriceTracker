@@ -18,12 +18,9 @@ pip install bs4
 - Cellphones
 - Thegioididong
 - GearVN
+- Phongvu
 ### Adding
-- ~~Fptshop~~ (Currently not possible)
-- ~~Lazada~~
-- ~~Tiki~~
-- ~~Shopee~~ (Currently not possible)
-- Hanoicomputer
+- ~~Hanoicomputer~~
 - Dienmayxanh
 - etc.
 ### Features
