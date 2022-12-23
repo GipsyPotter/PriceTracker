@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 
 
-def Pformat(price):
+def Pformat(price): #Format the price
     if price:
         price = int(price)
         price = "{:,}".format(price)
@@ -37,6 +37,7 @@ def TGDD(URL):
 
     HEADERS = {
         'User-Agent': 'Mozilla/5.0 (iPad; CPU OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148'}
+    #Need to add headers to avoid 403 error
     rprice = ""
     page = requests.get(URL, headers=HEADERS)
     soup = BeautifulSoup(page.content, "html.parser")
@@ -81,7 +82,7 @@ def Phongvu(URL):
     return Pformat(rprice)
 
 
-def main():
+def main(): #Check if the URL is valid
     URL = input("URL: ")
     if "cellphones.com.vn" in URL:
         print(Cellphones(URL))
@@ -98,3 +99,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+    #For now, the program only scrapes the main price if it finds
+    #multiple prices on the page. I'll add a feature to choose
